@@ -29,7 +29,7 @@ public class ApplicationController {
     private CheckBox generateEnglishPlates;
 
     @FXML
-    protected void userInputOnKeyReleased(KeyEvent keyEvent) {
+    protected void userInputTextFieldOnKeyReleased(KeyEvent keyEvent) {
         if(keyEvent.getCode() != KeyCode.BACK_SPACE) {
             userInputTextField.setText(userInputTextField.getText().toUpperCase());
             userInputTextField.setEditable(false);
@@ -37,10 +37,14 @@ public class ApplicationController {
     }
 
     @FXML
-    protected void userInputOnKeyPressed(KeyEvent keyEvent) {
-        if (keyEvent.getCode() == KeyCode.BACK_SPACE) {
-            userInputTextField.clear();
-            userInputTextField.setEditable(true);
+    protected void userInputTextFieldOnKeyPressed(KeyEvent keyEvent) {
+        if(userInputTextField.getText().length() == 1) {
+            if(keyEvent.getCode() != KeyCode.BACK_SPACE) {
+                userInputTextField.setEditable(false);
+            }else {
+                userInputTextField.clear();
+                userInputTextField.setEditable(true);
+            }
         }
     }
 }

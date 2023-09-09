@@ -19,7 +19,7 @@ public class TextFileService {
         wordList.stream()
             .filter(word -> word.charAt(0) == character)
                 .map(word -> {
-                    if(word.length() != 8) {
+                    if(word.length() != 8 && word.length() != 7) {
                         return character + "*" + " " + word;
                     }
                     return word;

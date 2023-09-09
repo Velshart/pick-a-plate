@@ -7,6 +7,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import me.velshh.pickaplate.service.TextFileService;
 
 public class ApplicationController {
 
@@ -28,6 +29,8 @@ public class ApplicationController {
     @FXML
     private CheckBox generateEnglishPlates;
 
+    private final TextFileService textFileService = new TextFileService();
+
     @FXML
     protected void userInputTextFieldOnKeyReleased(KeyEvent keyEvent) {
         if(keyEvent.getCode() != KeyCode.BACK_SPACE) {
@@ -47,4 +50,18 @@ public class ApplicationController {
             }
         }
     }
+
+    @FXML
+    protected void onGenerateButtonClick() {
+        boolean shouldPolishPlatesBeGenerated = generatePolishPlates.isSelected();
+        boolean shouldEnglishPlatesBeGenerated = generateEnglishPlates.isSelected();
+
+            textFileService.generatePlates(
+                    shouldPolishPlatesBeGenerated,
+                    shouldEnglishPlatesBeGenerated,
+                    polishPlates,
+                    englishPlates,
+                    userInputTextField.getText().charAt(0));
+    }
+
 }

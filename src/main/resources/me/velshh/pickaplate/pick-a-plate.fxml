@@ -22,6 +22,6 @@
         <CheckBox fx:id="generateEnglishPlates" layoutX="743.0" layoutY="227.0" mnemonicParsing="false" text="English" />
       <TextArea fx:id="englishPlates" editable="false" layoutX="52.0" layoutY="106.0" prefHeight="482.0" prefWidth="238.0" />
       <TextArea fx:id="polishPlates" editable="false" layoutX="351.0" layoutY="106.0" prefHeight="482.0" prefWidth="238.0" />
-      <Label layoutY="28.0" text="&quot;*&quot; means that number does not matter because it doesn't imitate any letter" />
+      <Label layoutY="28.0" text="&quot;*&quot; means that number does not matter because it does not imitate any letter" />
     </AnchorPane>
 </VBox>
